@@ -1,0 +1,10 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-button *ngIf="!(loggedIn | async)" (click)="logIn()"> Log In </ion-button>
+  <ion-button *ngIf="loggedIn | async" (click)="logOut()">Log Out</ion-button>
+</ion-content>

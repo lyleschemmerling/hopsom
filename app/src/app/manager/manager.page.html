@@ -1,0 +1,23 @@
+<ion-split-pane contentId="main-content">
+  <ion-menu contentId="main-content" type="overlay">
+    <ion-content>
+      <ion-list id="inbox-list">
+        <ion-list-header>Manager</ion-list-header>
+        <ion-note>have a good time</ion-note>
+        <ion-item *ngFor="let component of dashboardPages">
+          <ion-icon slot="start" [ios]="component.icon + '-outline'" [md]="component.icon + '-sharp'" routerDirection="root" [routerLink]="[component.url]"></ion-icon>
+          <ion-label>{{ component.title }}</ion-label>
+        </ion-item>
+      </ion-list>
+
+      <ion-list id="labels-list">
+        <ion-list-header>Other Locations</ion-list-header>
+        <ion-item *ngFor="let component of otherLocations" lines="none">
+          <ion-icon slot="start" [ios]="component.icon + '-outline'" [md]="component.icon + '-sharp'" routerDirection="root" [routerLink]="[component.url]"></ion-icon>
+          <ion-label>{{ component.title }}</ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-split-pane>
